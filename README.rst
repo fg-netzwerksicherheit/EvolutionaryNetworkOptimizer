@@ -18,25 +18,24 @@ The whole project consists 4 sub-projects:
 
 The list below shows how these sub-projects are related to each other and which one requires which ones.
 
-    NetworkOptimizer
-        OpenEA
-        Automated Simulations
-            AnyGraph
-        AnyGraph
-    OpenEA-GUI
-        OpenEA
+- Network Optimizer
+  - OpenEA
+  - Automated Simulations
+  - AnyGraph
+- OpenEA-GUI
+  - OpenEA
 
 
 Please follow the links below to read the installation guide, usage and documentation of each sub-project:
 
-- OpenEA: <TODO: insert link to OpenEA directory, readme.rst or documentation>
-- OpenEA-GUI: <TODO: insert link to OpenEA-GUI directory of documentation>
-- Automated Simulations: <TODO: insert link to Automated Simulations directory of documentation>
+- OpenEA: https://github.com/fg-netzwerksicherheit/openEA
+- OpenEA-GUI: https://github.com/fg-netzwerksicherheit/EvolutionaryNetworkOptimizer/tree/master/EA-GUI/doc
+- Automated Simulations: https://github.com/fg-netzwerksicherheit/EvolutionaryNetworkOptimizer/tree/master/Simulation/doc
 	- Go to directory Simulation and type "doxygen Doxyfile" to generate html documents
 	- Go to directory Simulation/Doxy-html/html and open index.html
-- NetworkOptimizer:
+- NetworkOptimizer: https://github.com/fg-netzwerksicherheit/EvolutionaryNetworkOptimizer/tree/master/NetworkOptimizer/doc
 	- Do the similar thing to the case of Automated Simulations
-- AnyGraph: <TODO: insert link to AnyGraph directory of documentation>
+- AnyGraph: https://github.com/fg-netzwerksicherheit/EvolutionaryNetworkOptimizer/tree/master/AnyGraph/doc/ExternalDocuments
 
 Requirements
 ============
