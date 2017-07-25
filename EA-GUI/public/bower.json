@@ -1,0 +1,30 @@
+{
+  "name": "ea-gui",
+  "authors": [
+    "Bui Quang Minh <minhcly95@outlook.com>",
+    "Chi Thanh Nguyen <chithanh1811@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.1.4",
+    "angular-route": "^1.6.4",
+    "underscore": "^1.8.3",
+    "angular-sanitize": "^1.6.4",
+    "jquery": "^3.2.1",
+    "amcharts3": "^3.21.1",
+    "angular-scroll-glue": "^2.2.0",
+    "angular-material-data-table": "^0.10.10",
+    "material-design-icons": "^3.0.1",
+    "angular-messages": "^1.6.4"
+  }
+}

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml>
+    <key id="g_Date" attr.name="Date" attr.type="double"/>
+    <key id="g_GeoLocation" attr.name="GeoLocation" attr.type="string"/>
+    <key id="g_Network" attr.name="Network" attr.type="string"/>
+    <key id="v_computer" attr.name="Computer" attr.type="string"/>
+    <key id="v_geocode_country" attr.name="geocode_country" attr.type="string"/>
+    <key id="v_hyperedge" attr.name="hyperedge" attr.type="double"/>
+    <key id="v_Network" attr.name="Network" attr.type="string"/>
+    <key id="v_GeoLocation" attr.name="GeoLocation" attr.type="string"/>
+    <key id="v_Country" attr.name="Country" attr.type="string"/>
+    <key id="v_NetworkDate" attr.name="NetworkDate" attr.type="string"/>
+    <key id="v_geocode_id" attr.name="geocode_id" attr.type="string"/>
+    <key id="v_label" attr.name="label" attr.type="string"/>
+    <key id="v_y" attr.name="y" attr.type="double"/>
+    <key id="v_Internal" attr.name="Internal" attr.type="double"/>
+    <key id="v_Longitude" attr.name="Longitude" attr.type="double"/>
+    <key id="v_Latitude" attr.name="Latitude" attr.type="double"/>
+    <key id="v_x" attr.name="x" attr.type="double"/>
+    <key id="v_type" attr.name="type" attr.type="string"/>
+    <key id="v_asn" attr.name="asn" attr.type="string"/>
+    <key id="e_edge_color" attr.name="edge_color" attr.type="string"/>
+    <key id="e_weight" attr.name="weight" attr.type="double"/>
+    <key id="e_LinkType" attr.name="LinkType" attr.type="string"/>
+    <key id="e_LinkNote" attr.name="LinkNote" attr.type="string"/>
+    <key id="e_LinkSpeedUnits" attr.name="LinkSpeedUnits" attr.type="string"/>
+    <key id="e_label" attr.name="label" attr.type="string"/>
+    <key id="e_LinkLabel" attr.name="LinkLabel" attr.type="string"/>
+    <key id="e_edge_width" attr.name="edge_width" attr.type="double"/>
+    <key id="e_LinkSpeedRaw" attr.name="LinkSpeedRaw" attr.type="double"/>
+    <key id="e_key" attr.name="key" attr.type="double"/>
+    <key id="e_zorder" attr.name="zorder" attr.type="double"/>
+    <graph>
+        <node id="n0">
+            <data key="v_geocode_country"></data>
+            <data key="v_Network">ACOnet</data>
+            <data key="v_GeoLocation">Austria</data>
+            <data key="v_Country">Austria</data>
+            <data key="v_NetworkDate">2009-06</data>
+            <data key="v_geocode_id"></data>
+            <data key="v_label">Linz1</data>
+            <data key="v_y">-48.3064</data>
+            <data key="v_Internal">1</data>
+            <data key="v_Longitude">14.2861</data>
+            <data key="v_Latitude">48.3064</data>
+            <data key="v_x">14.2861</data>
+            <data key="v_type"></data>
+            <data key="v_asn">1853</data>
+            <data key="v_computer">c1</data>
+        </node>
+        <node id="n1">
+            <data key="v_geocode_country"></data>
+            <data key="v_Network">ACOnet</data>
+            <data key="v_GeoLocation">Austria</data>
+            <data key="v_Country">Austria</data>
+            <data key="v_NetworkDate">2009-06</data>
+            <data key="v_geocode_id"></data>
+            <data key="v_label">Linz2</data>
+            <data key="v_y">-48.3064</data>
+            <data key="v_Internal">1</data>
+            <data key="v_Longitude">14.2861</data>
+            <data key="v_Latitude">48.3064</data>
+            <data key="v_x">14.2861</data>
+            <data key="v_type"></data>
+            <data key="v_asn">1853</data>
+            <data key="v_computer">c2</data>
+        </node>
+        <node id="n2">
+            <data key="v_geocode_country"></data>
+            <data key="v_Network">ACOnet</data>
+            <data key="v_GeoLocation">Austria</data>
+            <data key="v_Country">Austria</data>
+            <data key="v_NetworkDate">2009-06</data>
+            <data key="v_geocode_id"></data>
+            <data key="v_label">Linz2</data>
+            <data key="v_y">-48.3064</data>
+            <data key="v_Internal">1</data>
+            <data key="v_Longitude">14.2861</data>
+            <data key="v_Latitude">48.3064</data>
+            <data key="v_x">14.2861</data>
+            <data key="v_type"></data>
+            <data key="v_asn">1853</data>
+        </node>
+        <node id="n3">
+            <data key="v_geocode_country"></data>
+            <data key="v_Network">ACOnet</data>
+            <data key="v_GeoLocation">Austria</data>
+            <data key="v_Country">Austria</data>
+            <data key="v_NetworkDate">2009-06</data>
+            <data key="v_geocode_id"></data>
+            <data key="v_label">Linz1</data>
+            <data key="v_y">-48.3064</data>
+            <data key="v_Internal">1</data>
+            <data key="v_Longitude">14.2861</data>
+            <data key="v_Latitude">48.3064</data>
+            <data key="v_x">14.2861</data>
+            <data key="v_type"></data>
+            <data key="v_asn">1853</data>
+            <data key="v_computer">c1</data>
+        </node>
+        <edge source="n0" target="n1">
+            <data key="e_edge_color"></data>
+            <data key="e_weight">1000</data>
+            <data key="e_LinkType"></data>
+            <data key="e_LinkNote"></data>
+            <data key="e_LinkSpeedUnits">G</data>
+            <data key="e_label">1000.0 MBit/s</data>
+            <data key="e_LinkLabel">1Gbps</data>
+            <data key="e_LinkSpeedRaw">1e+09</data>
+            <data key="e_key">0</data>
+        </edge>
+        <edge source="n1" target="n2">
+            <data key="e_edge_color"></data>
+            <data key="e_weight">100</data>
+            <data key="e_LinkType"></data>
+            <data key="e_LinkNote"></data>
+            <data key="e_LinkSpeedUnits">M</data>
+            <data key="e_label">100.0 MBit/s</data>
+            <data key="e_LinkLabel">100Mbps</data>
+            <data key="e_LinkSpeedRaw">1e+08</data>
+            <data key="e_key">0</data>
+        </edge>
+        <edge source="n0" target="n3">
+            <data key="e_edge_color"></data>
+            <data key="e_weight">100</data>
+            <data key="e_LinkType"></data>
+            <data key="e_LinkNote"></data>
+            <data key="e_LinkSpeedUnits">M</data>
+            <data key="e_label">100.0 MBit/s</data>
+            <data key="e_LinkLabel">100Mbps</data>
+            <data key="e_LinkSpeedRaw">1e+08</data>
+            <data key="e_key">0</data>
+        </edge>
+    </graph>
+</graphml>

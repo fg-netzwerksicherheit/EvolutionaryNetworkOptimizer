@@ -1,0 +1,20 @@
+/**
+
+@page examples Examples
+
+@par Prerequisites
+\ref installation-guide
+
+This page contains links to various useful examples to show you how to use the library.
+
+Here is the list of available examples:
+	- @subpage examples-datarate
+	- @subpage examples-linkarrangement
+	- @subpage examples-linkdelay
+
+
+
+
+
+ */
+

@@ -1,0 +1,56 @@
+<div class="side-nav" md-whiteframe="4" ng-class="{'hide-text':!showText}">
+    <div layout="column" layout-fill>
+        <md-list>
+            <!--md-list-item ng-href="#!/dashboard"
+                          md-colors="{background: '{{color(&quot;dash&quot;)}}'}"
+                          md-theme="{{theme('dash')}}">
+                <md-icon>dashboard</md-icon>
+                <p>Dashboard</p>
+            </md-list-item-->
+            <md-list-item ng-href="#!/launch"
+                          md-colors="{background: '{{color(&quot;launch&quot;)}}'}"
+                          md-theme="{{theme('launch')}}">
+                <md-icon>launch</md-icon>
+                <p>Launch</p>
+            </md-list-item>
+
+            <md-list-item ng-href="#!/graphviz"
+                          md-colors="{background: '{{color(&quot;graphviz&quot;)}}'}"
+                          md-theme="{{theme('graphviz')}}">
+                <md-icon>pageview</md-icon>
+                <p>Graph Visualizer</p>
+            </md-list-item>
+            <md-divider></md-divider>
+
+        </md-list>
+        <md-list flex>
+            <md-subheader class="md-no-sticky">Running EA</md-subheader>
+            <md-list-item ng-repeat="proc in procs track by proc.id" ng-href="#!/process/{{proc.id}}"
+                          md-colors="{background: '{{color(proc.id)}}'}"
+                          md-theme="{{theme(proc.id)}}">
+                <md-icon ng-if="!proc.running">check</md-icon>
+                <md-icon ng-if="proc.running">
+                    <md-progress-circular class="icon-like" md-diameter="24px">
+                    </md-progress-circular>
+                </md-icon>
+                <p md-truncate>{{proc.name}} <span class="md-caption">({{proc.id}})</span></p>
+                <md-icon class="md-secondary md-icon-progess"
+                         ng-if="proc.running && signalSent(proc)">
+                    <md-progress-circular class="icon-like" md-diameter="16px"></md-progress-circular>
+                </md-icon>
+                <md-icon class="md-secondary" ng-click="proc.running ? stop(proc) : clear(proc)"
+                         ng-if="proc.running && !signalSent(proc) || !proc.running">
+                    {{proc.running ? 'pause' : 'clear'}}
+                </md-icon>
+            </md-list-item>
+        </md-list>
+
+        <md-list>
+            <md-divider></md-divider>
+            <md-list-item ng-click="showAdvanced($event)">
+                <md-icon>info_outline</md-icon>
+                <p>About us</p>
+            </md-list-item>
+        </md-list>
+    </div>
+</div>

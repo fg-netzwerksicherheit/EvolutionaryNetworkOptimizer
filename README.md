@@ -1,2 +1,0 @@
-# EvolutionaryNetworkOptimizer
-Optimizing communication networks using evolutionary algorithms

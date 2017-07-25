@@ -1,0 +1,20 @@
+/**
+
+@page external-doc External Documents
+
+These documents may be outdated but they should provide a good introduction into the two modules Automated Simulation and AnyGraph.
+
+Tutorial for Automated Simulation: <a href="Simulation.pdf" target="_blank"><b>Simulation.pdf</b></a>
+
+Requirement for Graph files and Event files
+- <a href="write-a-use-case.pdf" target="_blank"><b>write-a-use-case.pdf</b></a>
+- see python files in \e Simulation/src/test/input/graphfiles
+
+AnyGraph documents:
+- <a href="Anyevent.pdf" target="_blank"><b>Anyevent.pdf</b></a>
+- <a href="AnyGraph-Report.pdf" target="_blank"><b>AnyGraph-Report.pdf</b></a>
+
+
+
+ */
+

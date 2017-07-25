@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<EvolutionStrategy size="20|size">
+	<initializer>
+		<LinkArrangementInitializer numComputers="10|numComputers"/>
+	</initializer>
+
+	<evaluator>
+		<LinkArrangementEvaluator numComputers="10|numComputers" budget="10|budget"/>
+	</evaluator>
+
+	<recombinators>
+		<MetaRecombinator ratio="1">
+			<recombinator>
+				<IntUniformCrossover/>
+			</recombinator>
+			<selector>
+				<UniformSelection with-replacement="false"/>
+			</selector>
+		</MetaRecombinator>
+	</recombinators>
+	<mutators>
+		<MetaMutator rate="0.1">
+			<mutator>
+				<IntPointResetMutation rate="0.1" allow-dupplicate="true">
+					<randomizer>
+						<LinkArrangementRandomizer/>
+					</randomizer>
+				</IntPointResetMutation>
+			</mutator>
+		</MetaMutator>
+	</mutators>
+	<survival-selector>
+		<GreedySelection/>
+	</survival-selector>
+	<hooks>
+		<LinkArrangementOutputHook print-genome="false|print"/>
+		<LinkArrangementExportHook export-graph="false|export-graph"/>
+		<GenerationTerminationHook target="1000000"/>
+	</hooks>
+</EvolutionStrategy>

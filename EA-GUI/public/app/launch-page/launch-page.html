@@ -1,0 +1,85 @@
+<form name="myForm" flex layout-align="center" style="margin: 0px">
+    <div layout="column" layout-padding layout-align="space-between stretch">
+
+        <div layout="row" layout-padding layout-align="center stretch" style="padding: 0px;">
+            <div layout="column" layout-padding layout-align="space-between stretch">
+                <file-chooser style="padding: 0px"></file-chooser>
+                <termination style="padding: 0px"></termination>
+                <multi-thread style="padding: 0px"></multi-thread>
+            </div>
+            <div layout="column" layout-padding layout-align="space-between stretch">
+                <md-card md-whiteframe="2" style="width: 300px; margin: 0px; padding: 0px">
+                    <div layout="row">
+                        <md-card-title>
+                            <span class="md-headline">Error Logging</span>
+                        </md-card-title>
+                    </div>
+                    <md-divider></md-divider>
+                    <md-card-content>
+                        <md-checkbox id="etoo" ng-model="log.etoo" aria-label="etoo">
+                            In stdout stream
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox id="etoe" ng-model="log.etoe" aria-label="etoe">
+                            In stderr stream
+                        </md-checkbox>
+                    </md-card-content>
+                </md-card>
+                <md-card md-whiteframe="2" style="width: 300px; margin: 0px; padding: 0px">
+                    <div layout="row">
+                        <md-card-title>
+                            <span class="md-headline">Information Logging</span>
+                        </md-card-title>
+                    </div>
+                    <md-divider></md-divider>
+                    <md-card-content>
+                        <md-checkbox id="itoo" ng-model="log.itoo" aria-label="itoo">
+                            In stdout stream
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox id="itoe" ng-model="log.itoe" aria-label="itoe">
+                            In stderr stream
+                        </md-checkbox>
+                    </md-card-content>
+                </md-card>
+                <md-card md-whiteframe="2" style="width: 300px; margin: 0px; padding: 0px">
+                    <div layout="row">
+                        <md-card-title>
+                            <span class="md-headline">Debug Logging</span>
+                        </md-card-title>
+                    </div>
+                    <md-divider></md-divider>
+                    <md-card-content>
+                        <md-checkbox id="dtoo" ng-model="log.dtoo" aria-label="dtoo">
+                            In stdout stream
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox id="dtoe" ng-model="log.dtoe" aria-label="dtoe">
+                            In stderr stream
+                        </md-checkbox>
+                    </md-card-content>
+                </md-card>
+                <md-card md-whiteframe="2" style="width: 300px; margin: 0px; padding: 0px">
+                    <div layout="row">
+                        <md-card-title>
+                            <span class="md-headline">Trace Logging</span>
+                        </md-card-title>
+                    </div>
+                    <md-divider></md-divider>
+                    <md-card-content>
+                        <md-checkbox id="ttoo" ng-model="log.ttoo" aria-label="ttoo">
+                            In stdout stream
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox id="ttoe" ng-model="log.ttoe" aria-label="ttoe">
+                            In stderr stream
+                        </md-checkbox>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <variable-editor style="padding: 8px"></variable-editor>
+        </div>
+        <eaml-editor style="padding: 16px;"></eaml-editor>
+        <md-button class="md-accent md-raised" ng-click="exec()" ng-disabled="myForm.$invalid">Start EA</md-button>
+
+</form>

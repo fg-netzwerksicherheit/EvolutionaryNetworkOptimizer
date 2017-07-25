@@ -1,0 +1,16 @@
+<md-card md-whiteframe="2" style="width: 300px; margin: 0px" ng-disabled="false">
+    <div layout="row">
+        <md-card-title>
+            <span class="md-headline">Restore</span>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-icon-button" ng-click="reset()">
+                <md-icon>restore</md-icon>
+            </md-button>
+        </md-card-actions>
+    </div>
+    <md-divider></md-divider>
+    <md-card-content>
+        <restore-upload-file></restore-upload-file>
+    </md-card-content>
+</md-card>

@@ -1,0 +1,54 @@
+/**
+
+@page examples-linkdelay Link Delay Optimization
+
+In this example, we want to find the optimal propagation delay values for all links in our network. Presently, this is probably the most simple example.
+
+@par Prerequisites
+Installation of OpenEA <br>
+Installation of NetworkOptimizer
+
+@par Problem Description
+As the administrator of a computer lab, you have found some mysterious ways to reduce the propagation delays between any two nodes and you want to exploit these to improve your network's quality. However, there is a price to pay for this method and the budget is tight this year. How should you proceed?
+
+You have a graph file in \e p2pnetml format that describes the network topology and an event file in \e json format containing a list of network events that usually happen in the lab.
+
+@par Solution
+You would generate a bunch of network instances with the same topology but different sets of propagation delay values and simulate all those specified events to evaluate them against one another.
+
+@par Running this example
+Go to the \e resources folder in the NetworkOptimizer project.
+
+Run OpenEA with either of these two commands:
+@code
+openea run LinkDelay.eaml -p1
+@endcode
+@code
+openea cluster local run LinkDelay.eaml
+@endcode
+Because ns3 does not support multi-threading, you have to run simulations either with 1 thread (1st command) or with multi-processes (2nd command)
+
+@par Results
+If it runs successfully, there should be output like this:
+
+@code
+...
+Gen	4	Best =	840.003		1.9819-2.4572-0.3117-3.4414
+Gen	5	Best =	840.002		0.1351-3.0669-1.5355-3.2829
+Gen	6	Best =	840.002		0.1351-3.0669-1.5355-3.2829
+Gen	7	Best =	840.002		0.1788-3.9433-0.4311-3.6130
+...
+@endcode
+
+The console displays the numbers of generations, the fitness values of the best candidate solutions, and the propagation delays (in \e seconds) of all links. At the time of writing, the default propagation delay of a link is 4 seconds and it costs you 1$ for each second decreased in this delay. Therefore, in the 7th generation from the output snippet above, the total cost of this network should be around 8$ (i.e. 4*4 - 0.1788 - 3.9433 - 0.4311 - 3.6130)
+
+@par Further Details
+1. Open file \e LinkDelay.eaml to take a look inside, there are several variables and parameters that you can change to see their effects.
+2. Go to the documents for the module \ref linkdelay to dig deeper into technical details.
+3. Taking a peek inside the graph file and event file can help you with the visualisation of the network and simulations.
+4. See \e Automated \e Simulations' documents for more information regarding network simulations, graph files, and event files.
+5. See \e OpenEA's documents for uasge details of the library and \e eaml file format.
+
+
+*/
+

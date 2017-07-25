@@ -1,0 +1,8 @@
+<input id="infoFolderInput" type="file" dir webkitdirectory class="ng-hide">
+<md-button id="infoChooseButton" class="md-raised md-primary ng-hide" aria-label="attach_file">Information Folder
+</md-button>
+<md-input-container class="md-icon-float md-icon-right md-block">
+    <label>Information Destination</label>
+    <input id="infoTextInput" ng-model="infoFolderName" type="text" ng-readonly="true" ng-disabled="!log.itof">
+    <md-icon ng_bind="'folder_open'"></md-icon>
+</md-input-container>

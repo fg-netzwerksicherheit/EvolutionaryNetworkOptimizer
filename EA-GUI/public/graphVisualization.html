@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network | GraphML</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="bower_components/vis/dist/vis.js"></script>
+    <link href="bower_components/vis/dist/vis-network.min.css" rel="stylesheet" type="text/css"/>
+    <script src="graph.js"></script>
+    <script src="graphmlparser.js"></script>
+    <script src="/home/schildknecht/vgu_interns/EA-GUI/public/extra_js/jqXMLUtils.js"></script>
+    <script src="bower_components/showEvents.js"></script>
+    <script src="bower_components/jsonLoader.js"></script>
+
+    <style type="text/css">
+     #mynetwork {
+      width: 1200px;
+      height: 900px;
+      border: 1px solid lightgray;
+      }
+
+      div.left {
+        position:relative;
+        float:left;
+        width:300px;
+        border: 1px solid lightgray;
+        height:900px;
+        padding:5px;
+      }
+
+      div.right {
+        padding-left:10px;
+        float:left;
+        width:1200px;
+        height: 900px;
+      }
+
+      div.bottom {
+        position:absolute;
+        bottom:5px;
+      }
+    </style>
+
+    </head>
+
+    <body>
+
+    <p id="graphProperties">Select GraphML-File</p>
+
+    <div class="left">
+      <input type="file" id="files" name="files[]" multiple /><br>
+      <input type="button" id = "cluster" style="float:top|right" value="cluster"/>
+      <input type="button" id = "show" value="Show Events" style="display: none;"/>
+      <input type="button" id = "event" value="Read Event-File" style="display: none;"/>
+
+      <form class="new" method="post" action="/jobs">
+        <div id="dynamicInput"></div>
+      </form>
+
+      <div class="bottom">
+        <span id="statusUpdate"></span><br />
+      </div>
+     </div>
+
+     <div class="right">
+       <div id="mynetwork"></div>
+     </div>
+
+    <script>
+
+    var eventFile;
+    var events;
+    var doc;
+    var xmlDoc;
+    var keys = [];
+    var cIDs = new Set();
+    var cIDsNumbers = {};
+    var clusterAttribute = "v_Country";
+    $('#cluster')[0].style.visibility = "hidden";
+
+          function getDynamicInputValue(nodes, graphNodes){
+              clusterAttribute = "v_"+$('#dynamicInput :selected').text();
+              cIDs = new Set();
+              cIDsNumbers = {};
+
+              for (var i = 0; i < nodes["length"]; i++) {
+                nodes["_data"]['n'+i].cid = graphNodes[i].datas[clusterAttribute];
+                if (!cIDs.has(graphNodes[i].datas[clusterAttribute])){
+                  cIDs.add(graphNodes[i].datas[clusterAttribute]);
+                  cIDsNumbers[graphNodes[i].datas[clusterAttribute]] = 0;
+                }
+                cIDsNumbers[graphNodes[i].datas[clusterAttribute]] = cIDsNumbers[graphNodes[i].datas[clusterAttribute]]+1;
+              }
+              return nodes;
+          }
+
+          function addInput(divName, keys) {
+            var select = $("<select/>")
+            $.each(keys, function(a, b) {
+              select.append($("<option/>").attr("value", b).text(b));
+            });
+            $("#" + divName).html('');
+            $("#" + divName).append(select);
+            $('#dynamicInput')[0].style.visibility = "visible";
+            $('#cluster')[0].style.visibility = "visible";
+          }
+
+          function getKeys(graphML, keys){
+            for (var i = 0, j = 0; i < graphML.keys.length; i++) {
+              if(graphML.keys[i].fortype == "node"){
+                keys[j] = graphML.keys[i].attr_name;
+                j++;
+              }
+            }
+            return keys;
+          }
+
+          function getPhysics(coordinates){
+            if ("undefined" != typeof coordinates)return false;
+            return true;
+          }
+
+          function getTitle(datas){
+            var string = JSON.stringify(datas.datas, null, "<br>");
+            string = string.replace(/["',}]/g, "");
+            if("undefined" == typeof datas.id){
+                string = string.replace(/[{]/g, "Source: "+datas.src +"  "+ "Target: " + datas.target);
+            }else{
+                string = string.replace(/[{]/g, "ID: " + datas.id);
+            }
+            return string;
+          }
+
+          function releaseFunction(clusterPosition, containedNodesPositions) {
+            return containedNodesPositions;
+          }
+
+          function clusterByCid(data, network, cIDs, cIDsNumbers) {
+              network.setData(data);
+              var clusterOptionsByData;
+              for (let cID of cIDs){
+                  clusterOptionsByData = {
+                    joinCondition:function(childOptions) {
+                      if("undefined" != typeof cID)return childOptions.cid == cID;
+                  },
+                  clusterNodeProperties: {id: cID, size: cIDsNumbers[cID], label: cID, borderWidth:3, shape:'triangle'}
+              };
+              network.cluster(clusterOptionsByData);
+            }
+          }
+
+           function handleFileSelect(evt) {
+               $("#event").show();
+               $('#dynamicInput')[0].style.visibility = "hidden";
+               $('#cluster')[0].style.visibility = "hidden";
+               $('#show')[0].style.visibility = "hidden";
+               var files = evt.target.files;
+               for (var i = 0, f; f = files[i]; i++) {
+                   reader = new FileReader();
+                   reader.onload = (function(theFile) {
+                       return function(e) {
+                           parser=new DOMParser();
+                           xmlDoc=parser.parseFromString(e.target.result,"text/xml");
+                           load(evt);
+                       };
+                   })(f);
+                   reader.readAsText(f);
+               }
+           }
+
+           function load(e) {
+             var xM = 0, yM = 0;
+             keys = [];
+             var json = $.xmlToJSON(xmlDoc);
+             graphML = new GraphMLViewer.parseGraphml(json);
+             graph = graphML.graphs[0];
+             graphKeys = graphML.keys;
+             graphNodes = graph.nodes;
+             graphEdges = graph.edges;
+             graphId = graph.id;
+             edgeDefault = graph.edgedefault;
+             $('#graphProperties')[0].innerHTML = edgeDefault + " Network with ID: " + graphId;
+             keys = getKeys(graphML, keys);
+
+             var nodes = new vis.DataSet([]);
+             if ("undefined" != typeof graphNodes[0].datas.v_x) {
+               for (var i = 0; i < graphNodes.length; i++) {
+                 if (Number(graphNodes[i].datas.v_x) < xM)xM = Number(graphNodes[i].datas.v_x);
+                 if (Number(graphNodes[i].datas.v_y) < yM)yM = Number(graphNodes[i].datas.v_y);
+                 }
+               xMabs = Math.abs(xM)+1;
+               yMabs = Math.abs(yM)+1;
+               for (var i = 0; i < graphNodes.length; i++) {
+                 nodes.add({id: graphNodes[i].id, title: getTitle(graphNodes[i]), size: 3, shape: 'dot', cid: '', x: (Number(graphNodes[i].datas.v_x)+xMabs)*100, y: (Number(graphNodes[i].datas.v_y)+yMabs)*100});
+               }
+             }else{
+               for (var i = 0; i < graphNodes.length; i++) {
+                 nodes.add({id: graphNodes[i].id, label: graphNodes[i].datas.v_label, title: getTitle(graphNodes[i])});
+               }
+             }
+
+             var edges = new vis.DataSet([]);
+             for (var i = 0; i < graphEdges.length; i++) {
+               edges.add({from: graphEdges[i].src, to: graphEdges[i].target, title: getTitle(graphEdges[i]), label: graphEdges[i].datas.e_label, font: {size:3}});
+             }
+
+             var container =  $('#mynetwork')[0];
+
+             var data = {
+               nodes: nodes,
+               edges: edges
+             };
+
+             if (edgeDefault == 'directed'){
+               var options = {
+                 physics: getPhysics(graphNodes[0].datas.v_x),
+                 edges:{
+                 arrows: 'to',
+                 },
+               };
+             }else{
+               var options = {
+                 physics: getPhysics(graphNodes[0].datas.v_x),
+
+                 edges: {
+                   smooth: {
+                     type: 'continuous'
+                   }
+                 }
+               };
+             }
+
+             var network = new vis.Network(container, data, options);
+
+             $('#cluster')[0].addEventListener('click', function() {
+               nodes = getDynamicInputValue(nodes, graphNodes);
+               clusterByCid(data, network, cIDs, cIDsNumbers);
+             }, false);
+
+             $('#show')[0].addEventListener('click', function() {
+                draw(network, events.events);
+             }, false);
+
+             $('#event')[0].addEventListener('click', function() {
+                 new JSONReader((eventFile) => {
+                 events = eventFile;
+                 $("#show").show();
+                 $('#show')[0].style.visibility = "visible";
+               });
+             }, false);
+
+             network.on("selectNode", function(params) {
+                 if (params.nodes.length == 1) {
+                     if (network.isCluster(params.nodes[0]) == true) {
+                         network.openCluster(params.nodes[0], {releaseFunction: releaseFunction});
+                     }
+                 }
+             });
+             addInput('dynamicInput', keys);
+           }
+
+           $('#files')[0].addEventListener('change', handleFileSelect, false);
+
+    </script>
+</body>
+</html>

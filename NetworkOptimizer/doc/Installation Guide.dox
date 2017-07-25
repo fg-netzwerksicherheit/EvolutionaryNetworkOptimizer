@@ -1,0 +1,96 @@
+/**
+
+@page installation-guide Installation Guide
+
+@par Prerequisites
+\ref introduction
+
+@par Installation steps
+The following list contains the most optimal installation order, detailed instructions will be given later.
+
+1. tinyxml2
+2. jsoncpp
+3. boost 1.63
+4. ns3.26
+5. OpenEA
+6. NetworkOptimizer (automatically installing Automated Simulations and AnyGraph)
+
+For tinyxml2 and jsoncpp, users should consult the internet. For OpenEA, please go to the respective documentation, maintained by another developer.
+
+---
+
+After building boost 1.63, copy header files into /usr/local/include. For example, if the header files are inside folder /boost_1_63_0/boost then go into boost_1_63_0
+@code
+cp -r boost /usr/local/include
+@endcode
+
+Copy the built library files into /usr/local/lib. For example, if they are inside boost_1_63_0/stage/lib then go into this folder and
+@code
+cp *.so /usr/local/lib
+@endcode
+
+---
+
+If you use the debug build of NetworkOptimizer, debug build of ns3.26 is required, otherwise optmized build of ns3.26 for optimized build of NetworkOptimizer. After that, go to directory ns3.26/build and copy the header files into /usr/local/include
+@code
+cp -r ns3 /usr/local/include
+@endcode
+
+Copy the built library files from ns3.26/build into /usr/local/lib
+@code
+cp *.so /usr/local/lib
+@endcode
+
+---
+
+To install NetworkOptimizer, go into folder NetworkOptimizer/build-scripts.
+- run the script to create sym links
+- run a script to build
+
+Example
+@code
+sudo ./all_symlinks_create.sh
+./NetOpt_lib_optimized_build.sh
+@endcode
+
+@note
+The build scripts (second line in the example above) should not be run with sudo, otherwise the owner of the built file would be \e root.
+
+@par Final Steps
+1. Set the variable LD_LIBRARY_PATH in /etc/environment
+2. Specify the library path to NetworkOptimizer for OpenEA's config file
+
+Open the file
+@code
+nano /etc/environment
+@endcode
+
+Then append this line
+@code
+LD_LIBRARY_PATH="/usr/local/lib"
+@endcode
+
+So that all libraries built earlier can be loaded at run-time.
+
+---
+
+Open the config file of OpenEA with the command:
+@code
+openea edit plugin
+@endcode
+
+Add the path to the library build you want to use and comment out the others in order to avoid class name conflict, for example:
+@code
+#../../NetworkOptimizer/SharedLib-Debug/libNetworkOptimizer-debug.so
+../../NetworkOptimizer/SharedLib-Optimized/libNetworkOptimizer-optimized.so
+@endcode
+or
+@code
+../../NetworkOptimizer/SharedLib-Debug/libNetworkOptimizer-debug.so
+#../../NetworkOptimizer/SharedLib-Optimized/libNetworkOptimizer-optimized.so
+@endcode
+
+---
+
+ */
+

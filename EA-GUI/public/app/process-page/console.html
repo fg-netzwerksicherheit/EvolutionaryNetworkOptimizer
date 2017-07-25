@@ -1,0 +1,29 @@
+<md-card md-whiteframe="2" style="width: 1070px">
+    <div layout="row">
+        <md-card-title>
+            <span class="md-headline">{{$parent.name}}</span>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-switch ng-model="stdoutOn"><span class="code">stdout</span></md-switch>
+            <md-switch ng-model="stderrOn" class="md-warn"><span class="code">stderr</span></md-switch>
+
+            <md-button class="md-icon-button md-warn" ng-click="stop()"
+                       ng-if="$parent.running && !signalSent[$parent.procId]">
+                <md-icon>pause</md-icon>
+            </md-button>
+            <md-progress-circular class="md-warn button-like" md-diameter="24px"
+                                  ng-if="$parent.running && signalSent[$parent.procId]">
+            </md-progress-circular>
+            <md-icon class="button-like" ng-if="!$parent.running">check</md-icon>
+
+            <md-button class="md-icon-button" ng-click="toggleHide()">
+                <md-icon ng-hide="hide">keyboard_arrow_up</md-icon>
+                <md-icon ng-show="hide">keyboard_arrow_down</md-icon>
+            </md-button>
+        </md-card-actions>
+    </div>
+    <md-divider></md-divider>
+    <md-card-content ng-hide="hide" class="console" ng-class="{'stdout-hide': !stdoutOn, 'stderr-hide': !stderrOn}" scroll-glue>
+        <div><div ng-repeat="line in lines track by $index"><span ng-bind-html="line"></span></div></div>
+    </md-card-content>
+</md-card>

@@ -1,0 +1,26 @@
+<md-card md-whiteframe="2" style="min-width: 1040px; min-height: 804px;">
+    <div layout="row">
+        <md-card-title>
+            <span class="md-headline">Graph Visualization</span>
+        </md-card-title>
+        <md-card-actions>
+            <md-button class="md-button" id="cluster" style="float:top|right">Cluster</md-button>
+            <div id="dynamicInput"></div>
+        </md-card-actions>
+    </div>
+    <md-card-content layout="row" layout="column">
+          <div flex = "22">
+            <div id="graphProperties">Select GraphML-File</div>
+            <input type="file" id="files" name="files[]" multiple/>
+          </div>
+          <div flex>
+            <div id="eventText">Select Event-File</div>
+            <input type="file" id = "event" value="Read Event-File" name="files[]" multiple/>
+            <input type="button" id = "toggleEvent" onclick="toggleFlag();" value="Start/Stop Event" />
+          </div>
+    </md-card-content>
+    <md-card-content>
+        <div id="mynetwork" style="width: 100%; height: 700px;"></div>
+        <div id="statusUpdate" style="overflow-y: auto; height:100px;">
+    </md-card-content>
+</md-card>

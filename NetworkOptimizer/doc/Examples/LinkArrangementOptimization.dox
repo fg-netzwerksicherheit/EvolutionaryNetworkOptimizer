@@ -1,0 +1,101 @@
+/**
+
+@page examples-linkarrangement Link Arrangement Optimization
+
+In this example, we want to connect all the nodes in a network in the most optimal way. At the time of writing, this is perhaps the most interesting and complicated example.
+
+@par Prerequisites
+Installation of OpenEA <br>
+Installation of NetworkOptimizer
+
+@par Problem Description
+You are required to set up a new computer network lab but there are no routers, switches, or even network interface cards around. The only things inside the room are a bunch of desktop computers and cables. You must spend your budget wisely to buy network interface cards and connect those computers together.
+
+@par Solution
+You would generate a bunch of network instances with the same number of nodes but different topology and properties. You then run simulations to assess their qualities. Of course, you wouldn't forget to keep the cost in check either.
+
+@par Running this example
+Go to the \e resources folder in the NetworkOptimizer project, you will see there are two \e eaml files for this example.
+
+Run each of them using OpenEA with either of these two commands:
+@code
+openea run LinkArrangement01.eaml -p1
+@endcode
+@code
+openea cluster local run LinkArrangement01.eaml
+@endcode
+Because ns3 does not support multi-threading, you have to run simulations either with 1 thread (1st command) or with multi-processes (2nd command)
+
+Running the second file of this example:
+@code
+openea run LinkArrangement02.eaml -p1
+@endcode
+or
+@code
+openea cluster local run LinkArrangement02.eaml
+@endcode
+
+@par Results
+If it runs successfully, there should be output like this:
+
+@code
+...
+Gen	27	Best = (Data = 10,320; Cost = 50; Average latency = 0.000567)
+Gen	28	Best = (Data = 10,320; Cost = 48; Average latency = 0.000811)
+Gen	29	Best = (Data = 10,320; Cost = 44; Average latency = 0.000735)
+...
+@endcode
+or
+@code
+...
+Gen	15	Best =	158.769
+Gen	16	Best =	161.25
+Gen	17	Best =	166.452
+Gen	18	Best =	181.053
+...
+@endcode
+
+In both cases, the console displays the numbers of generations, the fitness (values) of the best candidate solutions. However the 1st sub-example employes non-scalar fitness (vectors) while the 2nd one uses floating point numbers. Go to the respective module's documentation \ref linkarrangement for further explanation.
+
+@par Export graphs
+Try the following command to export a graph file (of the best candidate solution) after each generation:
+@code
+openea run LinkArrangement01.eaml -p1 --export-graph=true
+@endcode
+Now open some of them to see what your networks look like.<br>
+See \ref LinkArrangementExportHook for naming patterns of these generated graph files.
+
+@attention
+Not all parameters can be changed via command line like this, consult \e OpenEA's documentation for details.
+
+If you have installed the \e OpenEA-GUI, you should also use it to visualise those graph files
+@code
+openea gui
+@endcode
+
+\htmlonly <style>div.image img[src="la-netgraph1.jpg"]{width:260px;}</style> \endhtmlonly 
+\htmlonly <style>div.image img[src="la-netgraph2.jpg"]{width:260px;}</style> \endhtmlonly 
+\htmlonly <style>div.image img[src="la-netgraph3.jpg"]{width:260px;}</style> \endhtmlonly 
+
+<table>
+<tr><td>la-425-10320-21.xml
+    <td>la-1721-8256-10.xml
+    <td>la-2120-10320-9.xml
+<tr><td>\image html la-netgraph1.jpg
+    <td>\image html la-netgraph2.jpg
+    <td>\image html la-netgraph3.jpg
+<tr><td>A costly network
+    <td>When you cut too much cost
+    <td>A perfect solution
+</table> 
+
+
+@par Further Details
+1. Open two files \e LinkArrangement01.eaml and \e LinkArrangement02.eaml to take a look inside, there are several variables and parameters that you can change to see their effects.
+2. Go to the documents for the module \ref linkarrangement to dig deeper into technical details.
+3. Taking a peek inside the graph file and event file can help you with the visualisation of the network and simulations.
+4. See \e Automated \e Simulations' documents for more information regarding network simulations, graph files, and event files.
+5. See \e OpenEA's documents for uasge details of the library and \e eaml file format.
+
+*/
+

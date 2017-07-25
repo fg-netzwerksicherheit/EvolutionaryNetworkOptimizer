@@ -1,0 +1,8 @@
+<input id="traceFolderInput" type="file" dir webkitdirectory class="ng-hide">
+<md-button id="traceChooseButton" class="md-raised md-primary ng-hide" aria-label="attach_file">Trace Folder
+</md-button>
+<md-input-container class="md-icon-float md-icon-right md-block">
+    <label>Trace Destination</label>
+    <input id="traceTextInput" ng-model="traceFolderName" type="text" ng-readonly="true" ng-disabled="!log.ttof">
+    <md-icon ng_bind="'folder_open'"></md-icon>
+</md-input-container>

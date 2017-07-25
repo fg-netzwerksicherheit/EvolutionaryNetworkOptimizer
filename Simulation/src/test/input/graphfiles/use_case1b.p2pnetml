@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_color" for="node" attr.name="color" attr.type="string"/>
+  <key id="v_size" for="node" attr.name="size" attr.type="double"/>
+  <key id="e_MTUSrc" for="edge" attr.name="MTUSrc" attr.type="double"/>
+  <key id="e_DataRateSrc" for="edge" attr.name="DataRateSrc" attr.type="string"/>
+  <key id="e_MTUDst" for="edge" attr.name="MTUDst" attr.type="double"/>
+  <key id="e_InterframeGapDst" for="edge" attr.name="InterframeGapDst" attr.type="string"/>
+  <key id="e_label" for="edge" attr.name="label" attr.type="string"/>
+  <key id="e_Delay" for="edge" attr.name="Delay" attr.type="string"/>
+  <key id="e_DataRateDst" for="edge" attr.name="DataRateDst" attr.type="string"/>
+  <key id="e_InterframeGapSrc" for="edge" attr.name="InterframeGapSrc" attr.type="string"/>
+  <graph id="G" edgedefault="undirected">
+    <node id="n0">
+      <data key="v_color">green</data>
+      <data key="v_size">80</data>
+    </node>
+    <node id="n1">
+      <data key="v_color">green</data>
+      <data key="v_size">80</data>
+    </node>
+    <node id="n2">
+      <data key="v_color">green</data>
+      <data key="v_size">80</data>
+    </node>
+    <node id="n3">
+      <data key="v_color">green</data>
+      <data key="v_size">80</data>
+    </node>
+    <node id="n4">
+      <data key="v_color">green</data>
+      <data key="v_size">80</data>
+    </node>
+    <node id="n5">
+      <data key="v_color">green</data>
+      <data key="v_size">80</data>
+    </node>
+    <edge source="n0" target="n1">
+      <data key="e_MTUSrc">1500</data>
+      <data key="e_DataRateSrc">1000Mbps</data>
+      <data key="e_MTUDst">1500</data>
+      <data key="e_InterframeGapDst">96ns</data>
+      <data key="e_label">2ms</data>
+      <data key="e_Delay">2ms</data>
+      <data key="e_DataRateDst">1000Mbps</data>
+      <data key="e_InterframeGapSrc">96ns</data>
+    </edge>
+    <edge source="n1" target="n2">
+      <data key="e_MTUSrc">1500</data>
+      <data key="e_DataRateSrc">1000Mbps</data>
+      <data key="e_MTUDst">1500</data>
+      <data key="e_InterframeGapDst">96ns</data>
+      <data key="e_label">10ms</data>
+      <data key="e_Delay">10ms</data>
+      <data key="e_DataRateDst">1000Mbps</data>
+      <data key="e_InterframeGapSrc">96ns</data>
+    </edge>
+    <edge source="n2" target="n3">
+      <data key="e_MTUSrc">1500</data>
+      <data key="e_DataRateSrc">1000Mbps</data>
+      <data key="e_MTUDst">1500</data>
+      <data key="e_InterframeGapDst">96ns</data>
+      <data key="e_label">30ms</data>
+      <data key="e_Delay">30ms</data>
+      <data key="e_DataRateDst">1000Mbps</data>
+      <data key="e_InterframeGapSrc">96ns</data>
+    </edge>
+    <edge source="n3" target="n4">
+      <data key="e_MTUSrc">1500</data>
+      <data key="e_DataRateSrc">1000Mbps</data>
+      <data key="e_MTUDst">1500</data>
+      <data key="e_InterframeGapDst">96ns</data>
+      <data key="e_label">200ms</data>
+      <data key="e_Delay">200ms</data>
+      <data key="e_DataRateDst">1000Mbps</data>
+      <data key="e_InterframeGapSrc">96ns</data>
+    </edge>
+    <edge source="n4" target="n5">
+      <data key="e_MTUSrc">100</data>
+      <data key="e_DataRateSrc">1000Mbps</data>
+      <data key="e_MTUDst">500</data>
+      <data key="e_InterframeGapDst">96ns</data>
+      <data key="e_label">56ms</data>
+      <data key="e_Delay">56ms</data>
+      <data key="e_DataRateDst">100kbps</data>
+      <data key="e_InterframeGapSrc">96ns</data>
+    </edge>
+  </graph>
+</graphml>

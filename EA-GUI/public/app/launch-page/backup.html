@@ -1,0 +1,24 @@
+<md-card md-whiteframe="2" style="width: 300px; margin: 0px" ng-disabled="true">
+    <div layout="row">
+        <md-card-title>
+            <span class="md-headline">Back-up</span>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-icon-button" ng-click="reset()">
+                <md-icon>restore</md-icon>
+            </md-button>
+        </md-card-actions>
+    </div>
+    <md-divider></md-divider>
+    <md-card-content>
+        <backup-choose-folder></backup-choose-folder>
+        <md-input-container>
+            <label>Back-up Frequency</label>
+            <input name="backupFreq" type="number" ng-pattern="/^[1-9][0-9]*$/" ng-model="backupFreq">
+            <div ng-messages="myForm.backupFreq.$error" role="alert">
+                <div ng-message="number" class="my-message">Positive integer is required!</div>
+                <div ng-message="pattern" class="my-message">Positive integer is required!</div>
+            </div>
+        </md-input-container>
+    </md-card-content>
+</md-card>

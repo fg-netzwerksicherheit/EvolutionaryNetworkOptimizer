@@ -1,0 +1,8 @@
+<input id="debugFolderInput" type="file" dir webkitdirectory class="ng-hide">
+<md-button id="debugChooseButton" class="md-raised md-primary ng-hide" aria-label="attach_file">Debug Folder
+</md-button>
+<md-input-container class="md-icon-float md-icon-right md-block">
+    <label>Debug Destination</label>
+    <input id="debugTextInput" ng-model="debugFolderName" type="text" ng-readonly="true" ng-disabled="!log.dtof">
+    <md-icon ng_bind="'folder_open'"></md-icon>
+</md-input-container>

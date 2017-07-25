@@ -1,0 +1,12 @@
+<input id="eventsFileInput" type="file" class="ng-hide" accept=".json,.xml">
+<md-button id="eventsUploadButton" class="md-raised md-primary ng-hide" aria-label="attach_file">Network Events
+</md-button>
+<md-input-container class="md-icon-float md-icon-right md-block">
+    <label>Network Events</label>
+    <input id="eventsTextInput" name="eventsFileName"  ng-model="eventsFileName" type="text" ng-readonly="true" required>
+    <div ng-messages="myForm.eventFileName.$error" role="alert">
+        <div ng-message="required" class="my-message">This field can't be left blank!</div>
+    </div>
+
+    <md-icon ng_bind="'file_upload'"></md-icon>
+</md-input-container>

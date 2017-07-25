@@ -1,0 +1,32 @@
+/**
+
+@page introduction Introduction
+
+@par Project chain
+The whole project contains 4 main sub-projects: OpenEA, OpenEA-GUI, Automated Simulations, and AnyGraph. The list below shows how these sub-projects are related to each other and which one requires which ones.
+
+- NetworkOptimizer
+	- OpenEA
+	- Automated Simulations
+		- AnyGraph
+	- AnyGraph
+- OpenEA-GUI
+	- OpenEA
+
+@par Other Dependencies
+- AnyGraph
+	- tinyxml2
+	- jsoncpp
+	- boost_unit_test 1.63
+- Automated Simulations
+	- ns3.26
+	- boost_unit_test 1.63
+
+@par Operating System
+Ubuntu 16.04.2 LTS (64-bit version)
+
+@attention
+Other operating systems are not guaranteed to work.
+
+ */
+

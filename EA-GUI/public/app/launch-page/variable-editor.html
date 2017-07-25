@@ -1,0 +1,32 @@
+<md-card md-whiteframe="2" layout="column" style="width: 409px; height: 788px; margin: 0px">
+    <div layout="row">
+        <md-card-title>
+            <span class="md-headline">Variable Editor</span>
+        </md-card-title>
+    </div>
+    <md-divider></md-divider>
+    <md-card-content flex style="overflow-y: auto">
+        <md-table-container style="overflow-x: hidden">
+            <table md-table md-progress="promise" id="varTable">
+                <thead ng-if="!options.decapitate" md-head md-order="query.order"
+                       md-on-reorder="logOrder">
+                <tr md-row>
+                    <th md-column><span>Variable</span></th>
+                    <th md-column><span>Default Value</span></th>
+                    <th md-column><span>New Value</span></th>
+                </tr>
+                </thead>
+                <tbody md-body id="varTBody">
+                <tr md-row ng-repeat="attr in $parent.eamlVar">
+                    <td md-cell>{{attr.variable}}</td>
+                    <td md-cell>{{attr.value}}</td>
+                    <td md-cell ng-click="edit($event, attr)"
+                        ng-class="{'md-placeholder': !attr.newVal}">
+                        {{attr.newVal || 'Edit'}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+    </md-card-content>
+</md-card>

@@ -1,0 +1,9 @@
+<input id="restoreFileInput" type="file" class="ng-hide" accept=".eabak">
+<md-button id="restoreUploadButton" class="md-raised md-primary ng-hide" aria-label="attach_file">Back-up Image
+</md-button>
+<md-input-container class="md-icon-float md-icon-right md-block">
+    <label>Back-up Image</label>
+    <input id="restoreTextInput" ng-model="restoreFileName" type="text"
+           ng-readonly="true">
+    <md-icon ng_bind="'file_upload'"></md-icon>
+</md-input-container>

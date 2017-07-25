@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_DataRate" for="node" attr.name="DataRate" attr.type="string"/>
+  <key id="v_color" for="node" attr.name="color" attr.type="string"/>
+  <key id="v_label" for="node" attr.name="label" attr.type="string"/>
+  <key id="v_InterframeGap" for="node" attr.name="InterframeGap" attr.type="string"/>
+  <key id="v_Computer" for="node" attr.name="Computer" attr.type="string"/>
+  <key id="v_MTU" for="node" attr.name="MTU" attr.type="double"/>
+  <key id="v_size" for="node" attr.name="size" attr.type="double"/>
+  <key id="e_Delay" for="edge" attr.name="Delay" attr.type="string"/>
+  <key id="e_label" for="edge" attr.name="label" attr.type="string"/>
+  <graph id="G" edgedefault="undirected">
+    <node id="n0">
+      <data key="v_DataRate">1000Mbps</data>
+      <data key="v_color">green</data>
+      <data key="v_label">ID: 0
+1000Mbps</data>
+      <data key="v_InterframeGap">96ns</data>
+      <data key="v_Computer">comp0</data>
+      <data key="v_MTU">1500</data>
+      <data key="v_size">80</data>
+    </node>
+    <node id="n1">
+      <data key="v_DataRate">1000Mbps</data>
+      <data key="v_color">green</data>
+      <data key="v_label">ID: 1
+1000Mbps</data>
+      <data key="v_InterframeGap">96ns</data>
+      <data key="v_Computer">comp1</data>
+      <data key="v_MTU">1500</data>
+      <data key="v_size">80</data>
+    </node>
+    <node id="n2">
+      <data key="v_DataRate">1000Mbps</data>
+      <data key="v_color">green</data>
+      <data key="v_label">ID: 2
+1000Mbps</data>
+      <data key="v_InterframeGap">96ns</data>
+      <data key="v_Computer">comp2</data>
+      <data key="v_MTU">1500</data>
+      <data key="v_size">80</data>
+    </node>
+    <node id="n3">
+      <data key="v_DataRate">1000Mbps</data>
+      <data key="v_color">green</data>
+      <data key="v_label">ID: 3
+1000Mbps</data>
+      <data key="v_InterframeGap">96ns</data>
+      <data key="v_Computer">comp3</data>
+      <data key="v_MTU">1500</data>
+      <data key="v_size">80</data>
+    </node>
+    <node id="n4">
+      <data key="v_DataRate">1000Mbps</data>
+      <data key="v_color">green</data>
+      <data key="v_label">ID: 4
+1000Mbps</data>
+      <data key="v_InterframeGap">96ns</data>
+      <data key="v_Computer">comp4</data>
+      <data key="v_MTU">1500</data>
+      <data key="v_size">80</data>
+    </node>
+    <node id="n5">
+      <data key="v_DataRate">1000Mbps</data>
+      <data key="v_color">green</data>
+      <data key="v_label">ID: 5
+1000Mbps</data>
+      <data key="v_InterframeGap">96ns</data>
+      <data key="v_Computer">comp5</data>
+      <data key="v_MTU">1500</data>
+      <data key="v_size">80</data>
+    </node>
+    <edge source="n0" target="n4">
+      <data key="e_Delay">2ms</data>
+      <data key="e_label">2ms</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_Delay">10ms</data>
+      <data key="e_label">10ms</data>
+    </edge>
+    <edge source="n2" target="n4">
+      <data key="e_Delay">30ms</data>
+      <data key="e_label">30ms</data>
+    </edge>
+    <edge source="n3" target="n4">
+      <data key="e_Delay">200ms</data>
+      <data key="e_label">200ms</data>
+    </edge>
+    <edge source="n4" target="n5">
+      <data key="e_Delay">56ms</data>
+      <data key="e_label">56ms</data>
+    </edge>
+  </graph>
+</graphml>

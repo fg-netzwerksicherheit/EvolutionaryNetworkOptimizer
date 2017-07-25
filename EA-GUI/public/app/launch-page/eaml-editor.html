@@ -1,0 +1,20 @@
+<md-card md-whiteframe="2" layout-padding flex style="width: 1045px; margin: 0px">
+    <div layout="row" style="padding: 0px">
+        <md-card-title>
+            <span class="md-headline">Configuration File</span>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-icon-button" ng-click="resetContent()">
+                <md-icon>restore</md-icon>
+            </md-button>
+        </md-card-actions>
+    </div>
+    <md-divider></md-divider>
+    <md-card-content flex layout="column">
+        <md-input-container class="md-block">
+                    <textarea id="editConfig" md-select-on-focus md-no-autogrow
+                              style="min-height: 630px; font-family: 'Roboto Mono', monospace;">
+                    </textarea>
+        </md-input-container>
+    </md-card-content>
+</md-card>

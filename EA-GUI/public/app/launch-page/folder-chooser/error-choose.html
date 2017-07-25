@@ -1,0 +1,8 @@
+<input id="errorFolderInput" type="file" dir webkitdirectory class="ng-hide">
+<md-button id="errorChooseButton" class="md-raised md-primary ng-hide" aria-label="attach_file">Error Folder
+</md-button>
+<md-input-container class="md-icon-float md-icon-right md-block">
+    <label>Error Destination</label>
+    <input id="errorTextInput" ng-model="errorFolderName" type="text" ng-readonly="true" ng-disabled="!log.etof">
+    <md-icon ng_bind="'folder_open'"></md-icon>
+</md-input-container>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<EvolutionStrategy size="30|size">
+	<initializer>
+		<DataRateInitializer graph-file="./input/use_case1a.p2pnetml|graph-file" min-datarate="0" max-datarate="10"/>
+	</initializer>
+
+	<evaluator>
+		<DataRateScalarEvaluator graph-file="./input/use_case1a.p2pnetml|graph-file" event-file="./input/use_case1a_events.json|event-file" budget="10|budget"/>
+	</evaluator>
+
+	<recombinators>
+		<MetaRecombinator ratio="1">
+			<recombinator>
+				<DataRateRecombinator/>
+			</recombinator>
+			<selector>
+				<UniformSelection with-replacement="false"/>
+			</selector>
+		</MetaRecombinator>
+	</recombinators>
+	<mutators>
+		<MetaMutator rate="0.2">
+			<mutator>
+				<DataRateMutator gene-mutation-rate="0.3" min-datarate="0" max-datarate="10"/>
+			</mutator>
+		</MetaMutator>
+	</mutators>
+	<survival-selector>
+		<GreedySelection/>
+	</survival-selector>
+	<hooks>
+		<StandardOutputHook print-genome="true|print"/>
+		<GenerationTerminationHook target="1000000"/>
+	</hooks>
+</EvolutionStrategy>

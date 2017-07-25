@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<EvolutionStrategy size="100|size">
+	<initializer>
+		<LinkDelayInitializer graph-file="./input/use_case1a.p2pnetml|graph-file"/>
+	</initializer>
+
+	<evaluator>
+		<LinkDelayEvaluator graph-file="./input/use_case1a.p2pnetml|graph-file" event-file="./input/use_case1a_events.json|event-file" budget="8"/>
+	</evaluator>
+
+	<recombinators>
+		<MetaRecombinator ratio="1">
+			<recombinator>
+				<DoubleUniformCrossover/>
+			</recombinator>
+			<selector>
+				<UniformSelection with-replacement="false"/>
+			</selector>
+		</MetaRecombinator>
+	</recombinators>
+	<mutators>
+		<MetaMutator rate="0.4">
+			<mutator>
+				<DoublePointResetMutation rate="0.3" allow-dupplicate="true">
+					<randomizer>
+						<DoubleRandomizer lower="0" upper="8"/>
+					</randomizer>
+				</DoublePointResetMutation>
+			</mutator>
+		</MetaMutator>
+	</mutators>
+	<survival-selector>
+		<GreedySelection/>
+	</survival-selector>
+	<hooks>
+		<StandardOutputHook print-genome="true|print"/>
+		<GenerationTerminationHook target="1000000"/>
+	</hooks>
+</EvolutionStrategy>

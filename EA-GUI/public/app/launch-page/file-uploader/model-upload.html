@@ -1,0 +1,11 @@
+<input id="modelFileInput" type="file" class="ng-hide" accept=".graphml">
+<md-button id="modelUploadButton" class="md-raised md-primary ng-hide" aria-label="attach_file">Network Model
+</md-button>
+<md-input-container class="md-icon-float md-icon-right md-block">
+    <label>Network Model</label>
+    <input id="modelTextInput" name="modelFileName" ng-model="modelFileName" type="text" ng-readonly="true" required>
+    <div ng-messages="myForm.modelFileName.$error" role="alert">
+        <div ng-message="required" class="my-message">This field can't be left blank!</div>
+    </div>
+    <md-icon ng_bind="'file_upload'"></md-icon>
+</md-input-container>

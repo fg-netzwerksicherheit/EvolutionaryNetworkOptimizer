@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="bower_components/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet">
+    <link href="bower_components/vis/dist/vis-network.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="utf-8"/>
+</head>
+<body ng-app="EAGUIApp" ng-controller="MainPageCtrl">
+<div layout="column" layout-fill>
+    <md-toolbar md-whiteframe="6" style="z-index: 90">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" ng-click="toggleSideNav()">
+                <md-icon>menu</md-icon>
+            </md-button>
+            <h2 flex md-truncate>
+                OpenEA GUI
+            </h2>
+        </div>
+    </md-toolbar>
+
+    <div layout="row" layout-fill flex>
+        <side-nav></side-nav>
+        <md-content flex="100" layout="row" layout-align="center">
+            <div ng-view></div>
+        </md-content>
+    </div>
+</div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
+<script src="http://rawgit.com/daniel-nagy/md-data-table/master/dist/md-data-table.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-scroll-glue/src/scrollglue.js"></script>
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="bower_components/amcharts3/amcharts/amcharts.js"></script>
+<script src="bower_components/amcharts3/amcharts/serial.js"></script>
+<script src="bower_components/amcharts3/amcharts/themes/light.js"></script>
+<script src="bower_components/amcharts3/amcharts/plugins/dataloader/dataloader.min.js"></script>
+
+<script src="extra_js/showEvents.js"></script>
+<script src="extra_js/jsonLoader.js"></script>
+<script src="extra_js/vis/dist/vis.js"></script>
+<script src="extra_js/graph.js"></script>
+<script src="extra_js/graphmlparser.js"></script>
+<script src="extra_js/jqXMLUtils.js"></script>
+<script src="extra_js/jqmeter.min.js"></script>
+<script src="extra_js/sort.js"></script>
+
+<script src="app/app.js"></script>
+<script src="app/app.main-page.js"></script>
+<script src="app/app.side-nav.js"></script>
+<script src="app/process-page/process-page.js"></script>
+<script src="app/process-page/console.js"></script>
+<script src="app/process-page/fitness-plot.js"></script>
+<script src="app/process-page/graph-visualization.js"></script>
+<script src="app/launch-page/launch-page.js"></script>
+<script src="app/launch-page/backup.js"></script>
+<script src="app/launch-page/debug-log.js"></script>
+<script src="app/launch-page/eaml-editor.js"></script>
+<script src="app/launch-page/error-log.js"></script>
+<script src="app/launch-page/file-chooser.js"></script>
+<script src="app/launch-page/info-log.js"></script>
+<script src="app/launch-page/multi-thread.js"></script>
+<script src="app/launch-page/restore.js"></script>
+<script src="app/launch-page/termination.js"></script>
+<script src="app/launch-page/trace-log.js"></script>
+<script src="app/launch-page/variable-editor.js"></script>
+<script src="app/graph-page/graph-page.js"></script>
+<script src="app/graph-page/graph-viz.js"></script>
+
+<script src="app/dashboard-page/dashboard-page.js"></script>
+
+</body>
+</html>

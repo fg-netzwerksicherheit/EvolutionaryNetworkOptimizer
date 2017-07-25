@@ -1,0 +1,93 @@
+.md-subheader {
+    background-color: inherit;
+}
+
+md-list-item .md-list-item-inner>md-icon:first-child:not(.md-avatar-icon) {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.side-nav {
+    z-index: 90;
+    width: 300px;
+}
+
+.side-nav.hide-text {
+    width: 60px;
+}
+
+.side-nav md-list {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+md-progress-circular.icon-like {
+    pointer-events: none;
+}
+
+.md-icon-progess {
+    padding: 8px;
+}
+
+.md-icon-progess md-progress-circular.icon-like {
+    margin: 4px;
+
+}
+.hide-text p, .hide-text h3, .hide-text .md-subheader, .hide-text .md-secondary-container {
+    display: none;
+}
+
+.hide-text md-icon {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.hide-text md-list-item>.md-button, .hide-text md-list-item>.md-button>button {
+    min-width: 0;
+}
+
+.code {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.console {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    height: 20em;
+    overflow: auto;
+    background-color: #212121;
+    color: #E0E0E0;
+}
+
+.console>div {
+    white-space: pre;
+}
+
+.console .red {
+    color: #dc322f;
+}
+
+.console .yellow {
+    color: #b58900;
+}
+
+.console .blue {
+    color: #268bd2;
+}
+
+.page {
+    padding: 16px 16px 0px 16px;
+}
+
+md-icon.button-like, md-progress-circular.button-like {
+    margin-left: 20px !important;
+    margin-right: 8px !important;
+}
+
+.stdout-hide .stdout, .stderr-hide .stderr {
+    display: none;
+}
+
+md-progress-circular.md-dark-theme path {
+    stroke: rgba(255,255,255,0.7)
+}

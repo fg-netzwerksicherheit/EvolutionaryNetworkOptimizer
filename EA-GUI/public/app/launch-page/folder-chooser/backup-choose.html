@@ -1,0 +1,8 @@
+<input id="backupFolderInput" type="file" dir webkitdirectory class="ng-hide">
+<md-button id="backupChooseButton" class="md-raised md-primary ng-hide" aria-label="attach_file">Back-up Folder
+</md-button>
+<md-input-container class="md-icon-float md-icon-right md-block">
+    <label>Back-up Destination</label>
+    <input id="backupTextInput" ng-model="backupFolderName" type="text" ng-readonly="true">
+    <md-icon ng_bind="'folder_open'"></md-icon>
+</md-input-container>

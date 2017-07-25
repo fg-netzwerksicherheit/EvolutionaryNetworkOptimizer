@@ -1,0 +1,29 @@
+<md-card md-whiteframe="2" style="width: 300px; margin: 0px; padding: 0px">
+    <div layout="row">
+        <md-card-title>
+            <span class="md-headline">Termination conditions</span>
+        </md-card-title>
+    </div>
+    <md-divider></md-divider>
+    <md-card-content>
+        <md-input-container>
+            <label>Generation Limit</label>
+            <input id="genLim" name="genLim" type="number" ng-pattern="/^[1-9][0-9]*$/"
+                   ng-model="genLim">
+            <div ng-messages="myForm.genLim.$error" role="alert">
+                <div ng-message="number" class="my-message">Positive integer is required!</div>
+                <div ng-message="pattern" class="my-message">Positive integer is required!</div>
+            </div>
+        </md-input-container>
+        <br>
+        <md-input-container>
+            <label>Evaluation Limit</label>
+            <input id="evalLim" name="evalLim" type="number" ng-pattern="/^[1-9][0-9]*$/"
+                   ng-model="evalLim">
+            <div ng-messages="myForm.evalLim.$error" role="alert">
+                <div ng-message="number" class="my-message">Positive integer is required!</div>
+                <div ng-message="pattern" class="my-message">Positive integer is required!</div>
+            </div>
+        </md-input-container>
+    </md-card-content>
+</md-card>
