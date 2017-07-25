@@ -2,7 +2,9 @@
 Evolutionary Network Optimizer - Optimizing communication networks using evolutionary algorithms
 ================================================================================================
 
-This is the repository of the Evolutionary Network Optimizer project, which is developed with the aim of diminishing the nightmare of network optimization. The project takes advantages of Evolutionary Computation and Network Simulator (NS3) to produce an optimal network using a plausible time and computing resource. 
+This is the repository of the Evolutionary Network Optimizer project, which is developed with the aim of ease the optimization of complex communication networks.
+The project takes advantages of Evolutionary Computation and the well known Network Simulator (NS3) to produce an optimal network using an adequate amount of time and computing resources.
+It uses simulations to evaluate solution candidates in evolutionary search heuristics, based on the considered attributes.
 
 Get the source on GitHub: https://github.com/fg-netzwerksicherheit/EvolutionaryNetworkOptimizer
 
@@ -18,35 +20,27 @@ The whole project consists 4 sub-projects:
 
 The list below shows how these sub-projects are related to each other and which one requires which ones.
 
-- Network Optimizer
-  - OpenEA
-  - Automated Simulations
-  - AnyGraph
-- OpenEA-GUI
-  - OpenEA
+- Network Optimizer: OpenEA, Automated Simulations, AnyGraph
+- OpenEA-GUI: OpenEA
 
 
 Please follow the links below to read the installation guide, usage and documentation of each sub-project:
 
 - OpenEA: https://github.com/fg-netzwerksicherheit/openEA
-- OpenEA-GUI: https://github.com/fg-netzwerksicherheit/EvolutionaryNetworkOptimizer/tree/master/EA-GUI/doc
-- Automated Simulations: https://github.com/fg-netzwerksicherheit/EvolutionaryNetworkOptimizer/tree/master/Simulation/doc
+- OpenEA-GUI: within OpenEA-Gui directory
+- Automated Simulations: within Simulation directory
 	- Go to directory Simulation and type "doxygen Doxyfile" to generate html documents
 	- Go to directory Simulation/Doxy-html/html and open index.html
-- NetworkOptimizer: https://github.com/fg-netzwerksicherheit/EvolutionaryNetworkOptimizer/tree/master/NetworkOptimizer/doc
-	- Do the similar thing to the case of Automated Simulations
-- AnyGraph: https://github.com/fg-netzwerksicherheit/EvolutionaryNetworkOptimizer/tree/master/AnyGraph/doc/ExternalDocuments
+- NetworkOptimizer: within NetworkOptimizer directory
+	- Go to directory NetworkOptimizer and type "doxygen Doxyfile" to generate html documents
+	- Go to directory NetworkOptimizer/Doxy-html/html and open index.html
+- AnyGraph: within AnyGraph directory
 
 Requirements
 ============
 
 Operating System: Ubuntu 16.04.2 LTS (64-bit version) or equivalent
-
-
-Disclaimer
-==========
-
-This project is not guaranteed to work on other operating systems. 
+This project is not guaranteed to (but may) work on other *nix-based operating systems.
 
 Authors
 =======
