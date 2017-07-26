@@ -1,5 +1,8 @@
-/src/
-/AnyGraph-debug
-/makefile
-/objects.mk
-/sources.mk
+
+# ignore everything
+*
+
+# white list
+!.gitignore
+!makefile_not_IDE.mk
+

@@ -1,0 +1,211 @@
+diff --git a/AnyGraph/Debug/.gitignore b/AnyGraph/Debug/.gitignore
+index 00002a1..e838cf0 100644
+--- a/AnyGraph/Debug/.gitignore
++++ b/AnyGraph/Debug/.gitignore
+@@ -1,5 +1,8 @@
+-/src/
+-/AnyGraph-debug
+-/makefile
+-/objects.mk
+-/sources.mk
++
++# ignore everything
++*
++
++# white list
++!.gitignore
++!makefile_not_IDE.mk
++
+diff --git a/AnyGraph/SharedLib-Debug/.gitignore b/AnyGraph/SharedLib-Debug/.gitignore
+index dd98a10..e838cf0 100644
+--- a/AnyGraph/SharedLib-Debug/.gitignore
++++ b/AnyGraph/SharedLib-Debug/.gitignore
+@@ -1,5 +1,8 @@
+-/src/
+-/libAnyGraph-debug.so
+-/makefile
+-/objects.mk
+-/sources.mk
++
++# ignore everything
++*
++
++# white list
++!.gitignore
++!makefile_not_IDE.mk
++
+diff --git a/AnyGraph/SharedLib-Optimized/.gitignore b/AnyGraph/SharedLib-Optimized/.gitignore
+index bf84c86..e838cf0 100644
+--- a/AnyGraph/SharedLib-Optimized/.gitignore
++++ b/AnyGraph/SharedLib-Optimized/.gitignore
+@@ -1,5 +1,8 @@
+-/libAnyGraph-optimized.so
+-/makefile
+-/objects.mk
+-/sources.mk
+-/src/
++
++# ignore everything
++*
++
++# white list
++!.gitignore
++!makefile_not_IDE.mk
++
+diff --git a/NetworkOptimizer/Debug-Test/.gitignore b/NetworkOptimizer/Debug-Test/.gitignore
+index aa22208..e838cf0 100644
+--- a/NetworkOptimizer/Debug-Test/.gitignore
++++ b/NetworkOptimizer/Debug-Test/.gitignore
+@@ -1,4 +1,8 @@
+-/src/
+-/makefile
+-/objects.mk
+-/sources.mk
++
++# ignore everything
++*
++
++# white list
++!.gitignore
++!makefile_not_IDE.mk
++
+diff --git a/NetworkOptimizer/Debug/.gitignore b/NetworkOptimizer/Debug/.gitignore
+index aa22208..e838cf0 100644
+--- a/NetworkOptimizer/Debug/.gitignore
++++ b/NetworkOptimizer/Debug/.gitignore
+@@ -1,4 +1,8 @@
+-/src/
+-/makefile
+-/objects.mk
+-/sources.mk
++
++# ignore everything
++*
++
++# white list
++!.gitignore
++!makefile_not_IDE.mk
++
+diff --git a/NetworkOptimizer/Optimized/.gitignore b/NetworkOptimizer/Optimized/.gitignore
+index aa22208..e838cf0 100644
+--- a/NetworkOptimizer/Optimized/.gitignore
++++ b/NetworkOptimizer/Optimized/.gitignore
+@@ -1,4 +1,8 @@
+-/src/
+-/makefile
+-/objects.mk
+-/sources.mk
++
++# ignore everything
++*
++
++# white list
++!.gitignore
++!makefile_not_IDE.mk
++
+diff --git a/NetworkOptimizer/SharedLib-Debug/.gitignore b/NetworkOptimizer/SharedLib-Debug/.gitignore
+index 5367d44..e838cf0 100644
+--- a/NetworkOptimizer/SharedLib-Debug/.gitignore
++++ b/NetworkOptimizer/SharedLib-Debug/.gitignore
+@@ -1,5 +1,8 @@
+-/src/
+-/libNetworkOptimizer-debug.so
+-/makefile
+-/objects.mk
+-/sources.mk
++
++# ignore everything
++*
++
++# white list
++!.gitignore
++!makefile_not_IDE.mk
++
+diff --git a/NetworkOptimizer/SharedLib-Optimized/.gitignore b/NetworkOptimizer/SharedLib-Optimized/.gitignore
+index 7b1336f..e838cf0 100644
+--- a/NetworkOptimizer/SharedLib-Optimized/.gitignore
++++ b/NetworkOptimizer/SharedLib-Optimized/.gitignore
+@@ -1,5 +1,8 @@
+-/src/
+-/libNetworkOptimizer-optimized.so
+-/makefile
+-/objects.mk
+-/sources.mk
++
++# ignore everything
++*
++
++# white list
++!.gitignore
++!makefile_not_IDE.mk
++
+diff --git a/Simulation/Debug/.gitignore b/Simulation/Debug/.gitignore
+index 8506bde..e838cf0 100644
+--- a/Simulation/Debug/.gitignore
++++ b/Simulation/Debug/.gitignore
+@@ -1,5 +1,8 @@
+-/src/
+-/makefile
+-/objects.mk
+-/sources.mk
+-/Simulation-debug
++
++# ignore everything
++*
++
++# white list
++!.gitignore
++!makefile_not_IDE.mk
++
+diff --git a/Simulation/Optimized/.gitignore b/Simulation/Optimized/.gitignore
+index aa22208..e838cf0 100644
+--- a/Simulation/Optimized/.gitignore
++++ b/Simulation/Optimized/.gitignore
+@@ -1,4 +1,8 @@
+-/src/
+-/makefile
+-/objects.mk
+-/sources.mk
++
++# ignore everything
++*
++
++# white list
++!.gitignore
++!makefile_not_IDE.mk
++
+diff --git a/Simulation/SharedLib-Debug/.gitignore b/Simulation/SharedLib-Debug/.gitignore
+index f6bf629..e838cf0 100644
+--- a/Simulation/SharedLib-Debug/.gitignore
++++ b/Simulation/SharedLib-Debug/.gitignore
+@@ -1,5 +1,8 @@
+-/src/
+-/libSimulation-debug (copy).so
+-/makefile
+-/objects.mk
+-/sources.mk
++
++# ignore everything
++*
++
++# white list
++!.gitignore
++!makefile_not_IDE.mk
++
+diff --git a/Simulation/SharedLib-Optimized/.gitignore b/Simulation/SharedLib-Optimized/.gitignore
+index aa22208..e838cf0 100644
+--- a/Simulation/SharedLib-Optimized/.gitignore
++++ b/Simulation/SharedLib-Optimized/.gitignore
+@@ -1,4 +1,8 @@
+-/src/
+-/makefile
+-/objects.mk
+-/sources.mk
++
++# ignore everything
++*
++
++# white list
++!.gitignore
++!makefile_not_IDE.mk
++

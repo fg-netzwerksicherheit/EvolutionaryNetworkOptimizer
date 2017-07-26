@@ -1,5 +1,8 @@
-/libAnyGraph-optimized.so
-/makefile
-/objects.mk
-/sources.mk
-/src/
+
+# ignore everything
+*
+
+# white list
+!.gitignore
+!makefile_not_IDE.mk
+
